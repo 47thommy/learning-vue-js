@@ -1,4 +1,5 @@
 <script>
+	import { ref } from "vue";
 	export default {
 		//  this is using options api
 		// data() {
@@ -10,16 +11,47 @@
 		// 	};
 		// },
 		// methods: {
-		// 	changeStatus() {
-		// 		if (this.status === "active") {
-		// 			this.status = "pending";
-		// 		} else if (this.status === "pending") {
-		// 			this.status = "inactive";
-		// 		} else {
-		// 			this.status = "active";
-		// 		}
-		// 	},
+		// changeStatus() {
+		// 	if (this.status === "active") {
+		// 		this.status = "pending";
+		// 	} else if (this.status === "pending") {
+		// 		this.status = "inactive";
+		// 	} else {
+		// 		this.status = "active";
+		// 	}
 		// },
+		// },
+
+		setup() {
+			const name = ref("Thomas Wondwosen");
+			const status = ref("inactive");
+			const tasks = ref([
+				"task one",
+				"task two",
+				"task three",
+				"task four",
+				"task five",
+			]);
+			const link = "https://google.com";
+
+			const changeStatus = () => {
+				if (status.value === "active") {
+					status.value = "pending";
+				} else if (status.value === "pending") {
+					status.value = "inactive";
+				} else {
+					status.value = "active";
+				}
+			};
+
+			return {
+				name,
+				status,
+				tasks,
+				link,
+				changeStatus,
+			};
+		},
 	};
 </script>
 
