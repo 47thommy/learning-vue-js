@@ -1,5 +1,5 @@
 <script setup>
-	import { ref } from "vue";
+	import { ref, onMounted } from "vue";
 
 	//  this is using options api
 	// data() {
@@ -53,6 +53,12 @@
 	const deleteTask = (index) => {
 		tasks.value.splice(index, 1);
 	};
+
+	onMounted(async () => {
+		const response = await fetch("https://jsonplaceholder.typicode.com/todos");
+		const data = await response.json();
+		tasks.value = data.map((task) => task.title);
+	});
 </script>
 
 <template>
