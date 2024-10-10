@@ -1,57 +1,46 @@
-<script>
+<script setup>
 	import { ref } from "vue";
-	export default {
-		//  this is using options api
-		// data() {
-		// 	return {
-		// 		name: "Thomas Wondwosen",
-		// 		status: "inactive",
-		// 		tasks: ["task one", "task two", "task three", "task four", "task five"],
-		// 		link: "https://google.com",
-		// 	};
-		// },
-		// methods: {
-		// changeStatus() {
-		// 	if (this.status === "active") {
-		// 		this.status = "pending";
-		// 	} else if (this.status === "pending") {
-		// 		this.status = "inactive";
-		// 	} else {
-		// 		this.status = "active";
-		// 	}
-		// },
-		// },
 
-		setup() {
-			const name = ref("Thomas Wondwosen");
-			const status = ref("inactive");
-			const tasks = ref([
-				"task one",
-				"task two",
-				"task three",
-				"task four",
-				"task five",
-			]);
-			const link = "https://google.com";
+	//  this is using options api
+	// data() {
+	// 	return {
+	// 		name: "Thomas Wondwosen",
+	// 		status: "inactive",
+	// 		tasks: ["task one", "task two", "task three", "task four", "task five"],
+	// 		link: "https://google.com",
+	// 	};
+	// },
+	// methods: {
+	// changeStatus() {
+	// 	if (this.status === "active") {
+	// 		this.status = "pending";
+	// 	} else if (this.status === "pending") {
+	// 		this.status = "inactive";
+	// 	} else {
+	// 		this.status = "active";
+	// 	}
+	// },
+	// },
 
-			const changeStatus = () => {
-				if (status.value === "active") {
-					status.value = "pending";
-				} else if (status.value === "pending") {
-					status.value = "inactive";
-				} else {
-					status.value = "active";
-				}
-			};
+	const name = ref("Thomas Wondwosen");
+	const status = ref("inactive");
+	const tasks = ref([
+		"task one",
+		"task two",
+		"task three",
+		"task four",
+		"task five",
+	]);
+	const link = "https://google.com";
 
-			return {
-				name,
-				status,
-				tasks,
-				link,
-				changeStatus,
-			};
-		},
+	const changeStatus = () => {
+		if (status.value === "active") {
+			status.value = "pending";
+		} else if (status.value === "pending") {
+			status.value = "inactive";
+		} else {
+			status.value = "active";
+		}
 	};
 </script>
 
