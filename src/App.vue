@@ -31,6 +31,7 @@
 		"task four",
 		"task five",
 	]);
+	const newTask = ref("");
 	const link = "https://google.com";
 
 	const changeStatus = () => {
@@ -40,6 +41,13 @@
 			status.value = "inactive";
 		} else {
 			status.value = "active";
+		}
+	};
+
+	const addNewTask = () => {
+		if (newTask.value !== "") {
+			tasks.value.push(newTask.value);
+			newTask.value = "";
 		}
 	};
 </script>
@@ -57,4 +65,10 @@
 	<a :href="link">Google</a>
 	<br />
 	<button @click="changeStatus">Change Status</button>
+
+	<form @submit.prevent="addNewTask">
+		<label for="addTask">Add Task</label>
+		<input type="text" id="addTask" name="addTask" v-model="newTask" />
+		<button type="submit">Add Task</button>
+	</form>
 </template>
